@@ -1,0 +1,35 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresdeluna27/React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "andresdeluna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresdeluna27/React/issues"
+  },
+  "homepage": "https://github.com/andresdeluna27/React#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "webpack": "^4.16.1",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.8"
+  }
+}
