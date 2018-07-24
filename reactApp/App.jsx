@@ -1,60 +1,31 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
-   constructor() {
-      super();
+   constructor(props) {
+      super(props);
+		
       this.state = {
-         data: 
-         [
-            {
-               "id":1,
-               "name":"Foo",
-               "age":"20"
-            },
-            {
-               "id":2,
-               "name":"Bar",
-               "age":"30"
-            },
-            {
-               "id":3,
-               "name":"Baz",
-               "age":"40"
-            }
-         ]
+         data: ''
       }
+      this.updateState = this.updateState.bind(this);
+      this.clearInput = this.clearInput.bind(this);
+   };
+   updateState(e) {
+      this.setState({data: e.target.value});
+   }
+   clearInput() {
+      this.setState({data: ''});
+      ReactDOM.findDOMNode(this.refs.myInput).focus();
    }
    render() {
       return (
          <div>
-            <Header/>
-            <table>
-               <tbody>
-                  {this.state.data.map((person, i) => <TableRow key = {i} 
-                     data = {person} />)}
-               </tbody>
-            </table>
+            <input value = {this.state.data} onChange = {this.updateState} 
+               ref = "myInput"></input>
+            <button onClick = {this.clearInput}>CLEAR</button>
+            <h4>{this.state.data}</h4>
          </div>
-      );
-   }
-}
-class Header extends React.Component {
-   render() {
-      return (
-         <div>
-            <h1>Header</h1>
-         </div>
-      );
-   }
-}
-class TableRow extends React.Component {
-   render() {
-      return (
-         <tr>
-            <td>{this.props.data.id}</td>
-            <td>{this.props.data.name}</td>
-            <td>{this.props.data.age}</td>
-         </tr>
       );
    }
 }

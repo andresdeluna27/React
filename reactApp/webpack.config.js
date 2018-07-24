@@ -5,7 +5,7 @@ var config = {
       filename: 'index.js',
    },
    devServer: {
-      inline: false,
+      inline: true,
       port: 8080
    },
    module: {
